@@ -12,9 +12,6 @@ const Feed = () => {
         }
     ])
 
-   
-    
-
     return (
 
         <section className='feed-section' >

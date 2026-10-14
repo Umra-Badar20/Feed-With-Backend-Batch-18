@@ -9,10 +9,6 @@ const CreatePost = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         alert("Post submitted   ")
-
-       
-
-
     }
 
     return (
