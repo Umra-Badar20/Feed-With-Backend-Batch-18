@@ -18,6 +18,9 @@ const Feed = () => {
     return (
 
         <section className='feed-section' >
+            <button className='btn' onClick={() => {
+                window.location.href = '/create-post'
+            }}>Create Post</button>
             <h1>My Feed</h1>
 
             {
