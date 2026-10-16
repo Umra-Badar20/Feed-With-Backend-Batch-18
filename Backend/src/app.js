@@ -2,9 +2,10 @@ import express from "express"
 import postModel from "./models/post.model.js"
 import multer from "multer"
 import uploadFile from "../services/storage.service.js"
+import cors from "cors"
 const app = express()
 app.use(express.json())
-
+app.use(cors())
 const storage = multer.memoryStorage()
 const upload = multer({ storage: storage })
 
@@ -21,7 +22,12 @@ app.post('/posts',upload.single("image"), async(req, res) => {
    
    const result = await uploadFile(imgBuffer)
    console.log(result);
-    res.status(201).json({messgae:"Post created sucessfully"})
+
+   const post = await postModel.create({
+      image: result.url,
+      desc: data.desc
+   })
+    res.status(201).json({messgae:"Post created sucessfully", post})
 })
 
 export default app

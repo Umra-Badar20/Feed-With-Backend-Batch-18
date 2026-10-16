@@ -12,6 +12,11 @@ const Feed = () => {
         }
     ])
 
+    useEffect(()=>{
+        axios.get("http://localhost:3000/posts")
+        .then((res=> setPosts(res.data.post)))
+    },[])
+
     return (
 
         <section className='feed-section' >

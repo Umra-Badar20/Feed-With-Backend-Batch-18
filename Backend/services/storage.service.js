@@ -12,4 +12,3 @@ async function uploadFile(buffer){
       return response
 }
 export default uploadFile
-
